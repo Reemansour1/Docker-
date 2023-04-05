@@ -1,0 +1,38 @@
+problem 2
+Remove all stopped containers :docker container prune -f
+(This command will remove all stopped containers and their volumes, freeing up disk space on your system. The -f flag is used to force removal without prompting for confirmation)
+problem 3
+• Run a container httpd with name apache and 
+attach a volume to the container
+-cd Documents (or other)
+-notepad index.html
+-<!DOCTYPE html>
+<html>
+<head>
+    <title>My webpage</title>
+</head>
+<body>
+    <h1>Welcome to my webpage</h1>
+    <p>This is some sample text.</p>
+</body>
+</html>
+
+->docker run -d -p 80:80  --name=apache2 -v  C:\Users\hi55\Documents\ll:/usr/local/apache2/htdocs httpd 
+the port mapping must be allocated
+
+
+
+problem 4
+docker run -d  --name=apache3 httpd
+docker exec -it apache3 bash
+apt-get update
+apt-get install -y vim
+cd /usr/local/apache2/htdocs
+vim index.html (change in file)
+apt-get install -y curl
+ curl http://localhost
+exit
+docker commit apache3 my-apacheash (This will create a new image named "my-apache" based on the current state of the "apache3" container.)
+
+task5
+docker run -d -e MYSQL_ROOT_PASSWORD=P4sSw0rd0! --name app-database -v mysql_data:/var/lib/mysql mysql (created vloume in docker)
