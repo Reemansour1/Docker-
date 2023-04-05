@@ -1,0 +1,4 @@
+lab 2
+FROM mysql:latest‏
+ENV MYSQL_PASSWORD=P4sSw0rd0!
+VOLUME mysql_data /var/lib/mysql
